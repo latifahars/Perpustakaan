@@ -619,8 +619,9 @@
   }
   function insertCss(css) {
     if (!css || !IS_DOM) {
-      return;
+      return true;
     }
+    return false;
 
     var style = DOCUMENT.createElement('style');
     style.setAttribute('type', 'text/css');
