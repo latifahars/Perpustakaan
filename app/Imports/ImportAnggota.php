@@ -42,7 +42,7 @@ class ImportAnggota implements ToCollection
                     ]);
                 }
                 else{
-                    $data = Anggota::where('nis',$row[0])
+                    Anggota::where('nis',$row[0])
                         ->update([
                             'nama' => $row[1],
                             'kelas' => $row[2],
