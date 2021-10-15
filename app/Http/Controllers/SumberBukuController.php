@@ -33,7 +33,7 @@ class SumberBukuController extends Controller
 	    'nama' => 'required'
 		]);
 
-		$sumber = SumberBuku::where('id', $idsumber)
+		SumberBuku::where('id', $idsumber)
             ->update([
                 'nama' => $request->get('nama'),
             ]);
