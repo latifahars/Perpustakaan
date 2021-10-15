@@ -106,7 +106,7 @@ class BukuController extends Controller
         $user = auth()->user();
         // dd($request->all());
         
-        $buku = Buku::where('id', $idbuku)
+        Buku::where('id', $idbuku)
             ->update([
                 'kode' => str_pad($request->nomor_rak, 2, 0, STR_PAD_LEFT) . '-' . str_pad($request->kategori, 2, 0, STR_PAD_LEFT) . '-' . str_pad($idbuku, 2, 0, STR_PAD_LEFT),
                 'judul' => $request->get('judul'),
