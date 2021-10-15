@@ -135,19 +135,19 @@
 
   var noop = function noop() {};
 
-  var _WINDOW = {};
-  var _DOCUMENT = {};
-  var _MUTATION_OBSERVER = null;
-  var _PERFORMANCE = {
-    mark: noop,
-    measure: noop
-  };
-
   try {
-    if (typeof window !== 'undefined') _WINDOW = window;
-    if (typeof document !== 'undefined') _DOCUMENT = document;
-    if (typeof MutationObserver !== 'undefined') _MUTATION_OBSERVER = MutationObserver;
-    if (typeof performance !== 'undefined') _PERFORMANCE = performance;
+    if (typeof window !== 'undefined') {
+      var _WINDOW = window;
+    }
+    if (typeof document !== 'undefined') {
+      var _DOCUMENT = document;
+    }
+    if (typeof MutationObserver !== 'undefined') { 
+      var _MUTATION_OBSERVER = MutationObserver;
+    }
+    if (typeof performance !== 'undefined') {
+      var _PERFORMANCE = performance;
+    }
   } catch (e) {}
 
   var _ref = _WINDOW.navigator || {},

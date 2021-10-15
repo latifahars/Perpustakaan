@@ -8,12 +8,13 @@
   (global['fontawesome-free-shims'] = factory());
 }(this, (function () { 'use strict';
 
-  var _WINDOW = {};
-  var _DOCUMENT = {};
-
   try {
-    if (typeof window !== 'undefined') _WINDOW = window;
-    if (typeof document !== 'undefined') _DOCUMENT = document;
+    if (typeof window !== 'undefined') {
+      var _WINDOW = window;
+    }
+    if (typeof document !== 'undefined') {
+      var _DOCUMENT = document;
+    }
   } catch (e) {}
 
   var _ref = _WINDOW.navigator || {},
