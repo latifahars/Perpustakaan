@@ -56,12 +56,10 @@
     return target;
   }
 
-  var _WINDOW = {};
-  var _DOCUMENT = {};
 
   try {
-    if (typeof window !== 'undefined') _WINDOW = window;
-    if (typeof document !== 'undefined') _DOCUMENT = document;
+    if (typeof window !== 'undefined') var _WINDOW = window;
+    if (typeof document !== 'undefined') var _DOCUMENT = document;
   } catch (e) {}
 
   var _ref = _WINDOW.navigator || {},
@@ -411,8 +409,8 @@
 
       function rstr2binl(input) {
         var i;
-        var output = [];
-        output[(input.length >> 2) - 1] = undefined;
+
+        var output[(input.length >> 2) - 1] = undefined;
 
         for (i = 0; i < output.length; i += 1) {
           output[i] = 0;
@@ -449,10 +447,10 @@
       function rstrHMACMD5(key, data) {
         var i;
         var bkey = rstr2binl(key);
-        var ipad = [];
+
         var opad = [];
         var hash;
-        ipad[15] = opad[15] = undefined;
+        var ipad[15] = opad[15] = undefined;
 
         if (bkey.length > 16) {
           bkey = binlMD5(bkey, key.length * 8);
