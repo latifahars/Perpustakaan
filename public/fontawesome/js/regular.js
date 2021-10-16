@@ -6,10 +6,10 @@
   'use strict';
 
   try {
-    if (typeof window !== 'undefined') {
+    if (typeof window !== "undefined") {
       var _WINDOW = window;
     }
-    if (typeof document !== 'undefined') {
+    if (typeof document !== "undefined") {
       var _DOCUMENT = document;
     }
   } catch (e) {}

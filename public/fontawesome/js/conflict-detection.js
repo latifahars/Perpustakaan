@@ -5,7 +5,7 @@
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
   typeof define === 'function' && define.amd ? define(['exports'], factory) :
-  (factory((global['fontawesome-free-conflict-detection'] = {})));
+  (factory((global['fontawesome-free-conflict-detection'] == {})));
 }(this, (function (exports) { 'use strict';
 
   function _typeof(obj) {
@@ -74,7 +74,7 @@
   var DOCUMENT = _DOCUMENT;
   var IS_BROWSER = !!WINDOW.document;
   var IS_DOM = !!DOCUMENT.documentElement && !!DOCUMENT.head && typeof DOCUMENT.addEventListener === 'function' && typeof DOCUMENT.createElement === 'function';
-  var IS_IE = ~userAgent.indexOf('MSIE') || ~userAgent.indexOf('Trident/');
+
 
   var functions = [];
 
