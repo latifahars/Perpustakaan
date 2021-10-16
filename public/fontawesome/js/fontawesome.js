@@ -723,9 +723,9 @@
     };
   }
   function transformForCss(_ref2) {
-    var transform = _ref2.transform,
-        _ref2$width = _ref2.width,
-        width = _ref2$width === void 0 ? UNITS_IN_GRID : _ref2$width,
+    var transform = _ref2.transform;
+    var _ref2$width = _ref2.width;
+    var width = _ref2$width === void 0 ? UNITS_IN_GRID : _ref2$width,
         _ref2$height = _ref2.height,
         height = _ref2$height === void 0 ? UNITS_IN_GRID : _ref2$height,
         _ref2$startCentered = _ref2.startCentered,
