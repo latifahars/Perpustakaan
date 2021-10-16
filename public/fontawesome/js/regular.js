@@ -12,7 +12,9 @@
     if (typeof document !== "undefined") {
       var _DOCUMENT = document;
     }
-  } catch (e) {}
+  } catch (e) {
+    console.log(e);
+  }
 
   var _ref = _WINDOW.navigator || {},
       _ref$userAgent = _ref.userAgent,
