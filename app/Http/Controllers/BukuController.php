@@ -82,7 +82,7 @@ class BukuController extends Controller
 
         $pengarang2 = DB::table('buku_pengarang')->where('buku_id',$idbuku)->get();
         $array = array();
-        foreach ($pengarang2 as $key => $a) {
+        foreach ($pengarang2 as $a) {
             $array[] = $a->pengarang_id;
         }
         $semuapengarang = Pengarang::whereIn('id', $array)->get('id');
