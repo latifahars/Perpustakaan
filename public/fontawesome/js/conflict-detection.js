@@ -583,18 +583,18 @@
   });
 
   function md5ForNode(node) {
-    if (null === node || 'object' !== _typeof(node)) return undefined;
-
-    if (node.src) {
-      return md5(node.src);
-    } else if (node.href) {
-      return md5(node.href);
-    } else if (node.innerText && '' !== node.innerText) {
-      // eslint-disable-line yoda
-      return md5(node.innerText);
-    } else {
+    if (null === node || 'object' !== _typeof(node)) {
       return undefined;
     }
+    if (node.src) {
+      return md5(node.src);
+    } if (node.href) {
+      return md5(node.href);
+    } if (node.innerText && '' !== node.innerText) {
+      // eslint-disable-line yoda
+      return md5(node.innerText);
+    } 
+      return undefined; 
   }
 
   var diagScriptId = 'fa-kits-diag';
@@ -697,9 +697,8 @@
 
             if (!!fontFamily.match(/FontAwesome/) || !!fontFamily.match(/Font Awesome 5/)) {
               return true;
-            } else {
+            } 
               return false;
-            }
           }
         }).then(function () {
           var node = document.getElementById(nodeUnderTestId);

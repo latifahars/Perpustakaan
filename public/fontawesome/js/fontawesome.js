@@ -761,9 +761,8 @@
   function deGroup(abstract) {
     if (abstract.tag === 'g') {
       return abstract.children;
-    } else {
+    } 
       return [abstract];
-    }
   }
 
   function makeIconMasking (_ref) {
@@ -1318,9 +1317,8 @@
 
     if (typeof abstractNodes === 'string') {
       return htmlEscape(abstractNodes);
-    } else {
-      return "<".concat(tag, " ").concat(joinAttributes(attributes), ">").concat(children.map(toHtml).join(''), "</").concat(tag, ">");
     }
+      return "<".concat(tag, " ").concat(joinAttributes(attributes), ">").concat(children.map(toHtml).join(''), "</").concat(tag, ">");
   }
 
   var noop$2 = function noop() {};
@@ -1531,7 +1529,7 @@
 
     if (!transformString) {
       return transform;
-    } else {
+    }
       return transformString.toLowerCase().split(' ').reduce(function (acc, n) {
         var parts = n.toLowerCase().split('-');
         var first = parts[0];
@@ -1585,7 +1583,6 @@
 
         return acc;
       }, transform);
-    }
   };
   function transformParser (node) {
     return parseTransformString(node.getAttribute('data-fa-transform'));
@@ -1624,11 +1621,10 @@
 
     if (!mask) {
       return emptyCanonicalIcon();
-    } else {
+    }
       return getCanonicalIcon(mask.split(' ').map(function (i) {
         return i.trim();
       }));
-    }
   }
 
   function blankMeta() {
@@ -2011,7 +2007,7 @@
         // removed. So we now should delete the icon.
         node.removeChild(alreadyProcessedPseudoElement);
         return resolve();
-      } else if (fontFamily && content !== 'none' && content !== '') {
+      } if (fontFamily && content !== 'none' && content !== '') {
         var prefix = ~['Solid', 'Regular', 'Light', 'Duotone', 'Brands'].indexOf(fontFamily[1]) ? STYLE_TO_PREFIX[fontFamily[1].toLowerCase()] : FONT_WEIGHT_TO_PREFIX[fontWeight];
         var hexValue = toHex(content.length === 3 ? content.substr(1, 1) : content);
         var iconName = byUnicode(prefix, hexValue);
