@@ -778,7 +778,7 @@
     var maskWidth = mask.width,
         maskPath = mask.icon;
     var trans = transformForSvg({
-      transform: transform,
+      transform,
       containerWidth: maskWidth,
       iconWidth: mainWidth
     });
@@ -835,7 +835,7 @@
     });
     return {
       children,
-      attributes: attributes
+      attributes
     };
   }
 
@@ -902,8 +902,8 @@
 
     return [{
       tag: 'svg',
-      attributes: attributes,
-      children: children
+      attributes,
+      children
     }];
   }
 
@@ -922,7 +922,7 @@
       children: [{
         tag: 'symbol',
         attributes: _objectSpread({}, attributes, {
-          id: id
+          id
         }),
         children: children
       }]
@@ -1011,7 +1011,7 @@
         watchable = _params$watchable2 === void 0 ? false : _params$watchable2;
 
     var attributes = _objectSpread({}, extra.attributes, title ? {
-      'title': title
+      title
     } : {}, {
       'class': extra.classes.join(' ')
     });
@@ -1115,8 +1115,8 @@
   };
 
   var perf = {
-    begin: begin,
-    end: end
+    begin,
+    end
   };
 
   /**
@@ -1252,7 +1252,7 @@
       }
 
       acc[oldName] = {
-        prefix: prefix,
+        prefix,
         iconName
       };
       return acc;
@@ -1302,8 +1302,8 @@
   function iconFromMapping(mapping, prefix, iconName) {
     if (mapping && mapping[prefix] && mapping[prefix][iconName]) {
       return {
-        prefix: prefix,
-        iconName: iconName,
+        prefix,
+        iconName,
         icon: mapping[prefix][iconName]
       };
     }
@@ -1660,13 +1660,13 @@
     var extraAttributes = attributesParser(node);
     var mask = maskParser(node);
     return {
-      iconName: iconName,
+      iconName,
       title: node.getAttribute('title'),
       titleId: node.getAttribute('data-fa-title-id'),
-      prefix: prefix,
-      transform: transform,
-      symbol: symbol,
-      mask: mask,
+      prefix,
+      transform,
+      symbol,
+      mask,
       maskId: node.getAttribute('data-fa-mask-id'),
       extra: {
         classes: extraClasses,
@@ -1799,7 +1799,7 @@
 
     return {
       found: true,
-      width: width,
+      width,
       height,
       icon: element
     };
@@ -1852,15 +1852,15 @@
 
         resolve([node, makeInlineSvgAbstract({
           icons: {
-            main: main,
-            mask: mask
+            main,
+            mask
           },
-          prefix: prefix,
-          iconName: iconName,
-          transform: transform,
-          symbol: symbol,
-          mask: mask,
-          maskId: maskId,
+          prefix,
+          iconName,
+          transform,
+          symbol,
+          mask,
+          maskId,
           title,
           titleId,
           extra,
@@ -1890,11 +1890,11 @@
 
     return picked.resolve([node, makeLayersTextAbstract({
       content: node.innerHTML,
-      width: width,
-      height: height,
-      transform: transform,
-      title: title,
-      extra: extra,
+      width,
+      height,
+      transform,
+      title,
+      extra,
       watchable: true
     })]);
   }
@@ -2324,17 +2324,17 @@
             icon: {}
           }
         },
-        prefix: prefix,
-        iconName: iconName,
+        prefix,
+        iconName,
         transform: _objectSpread({}, meaninglessTransform, transform),
-        symbol: symbol,
-        title: title,
-        maskId: maskId,
-        titleId: titleId,
+        symbol,
+        title,
+        maskId,
+        titleId,
         extra: {
-          attributes: attributes,
+          attributes,
           styles,
-          classes: classes
+          classes
         }
       });
     });
@@ -2359,10 +2359,10 @@
       return makeLayersTextAbstract({
         content,
         transform: _objectSpread({}, meaninglessTransform, transform),
-        title: title,
+        title,
         extra: {
-          attributes: attributes,
-          styles: styles,
+          attributes,
+          styles,
           classes: ["".concat(config.familyPrefix, "-layers-text")].concat(_toConsumableArray(classes))
         }
       });
@@ -2380,15 +2380,15 @@
         styles = _params$styles3 === void 0 ? {} : _params$styles3;
     return apiObject({
       type: 'counter',
-      content: content
+      content
     }, function () {
       ensureCss();
       return makeLayersCounterAbstract({
         content: content.toString(),
-        title: title,
+        title,
         extra: {
-          attributes: attributes,
-          styles: styles,
+          extraAttributes,
+          styles,
           classes: ["".concat(config.familyPrefix, "-layers-counter")].concat(_toConsumableArray(classes))
         }
       });
