@@ -853,7 +853,7 @@
 
     if (transformIsMeaningful(transform)) {
       var trans = transformForSvg({
-        transform: transform,
+        transform,
         containerWidth: main.width,
         iconWidth: main.width
       });
@@ -875,8 +875,8 @@
     }
 
     return {
-      children: children,
-      attributes: attributes
+      children,
+      attributes
     };
   }
 
@@ -924,7 +924,7 @@
         attributes: _objectSpread({}, attributes, {
           id
         }),
-        children: children
+        children
       }]
     }];
   }
@@ -1024,7 +1024,7 @@
 
     if (transformIsMeaningful(transform)) {
       styles['transform'] = transformForCss({
-        transform: transform,
+        transform,
         startCentered: true,
         width,
         height
@@ -1041,7 +1041,7 @@
     var val = [];
     val.push({
       tag: 'span',
-      attributes: attributes,
+      attributes,
       children: [content]
     });
 
@@ -1063,7 +1063,7 @@
         extra = params.extra;
 
     var attributes = _objectSpread({}, extra.attributes, title ? {
-      'title': title
+      title
     } : {}, {
       'class': extra.classes.join(' ')
     });
@@ -1077,7 +1077,7 @@
     var val = [];
     val.push({
       tag: 'span',
-      attributes: attributes,
+      attributes,
       children: [content]
     });
 
@@ -2032,12 +2032,12 @@
           findIcon(iconName, prefix).then(function (main) {
             var abstract = makeInlineSvgAbstract(_objectSpread({}, meta, {
               icons: {
-                main: main,
+                main,
                 mask: emptyCanonicalIcon()
               },
-              prefix: prefix,
+              prefix,
               iconName: iconIdentifier,
-              extra: extra,
+              extra,
               watchable: true
             }));
             var element = DOCUMENT.createElement('svg');
@@ -2208,7 +2208,7 @@
       }
 
       return next(iconDefinition, _objectSpread({}, params, {
-        mask: mask
+        mask
       }));
     };
   }
@@ -2423,7 +2423,7 @@
     dom,
     library,
     parse,
-    findIconDefinition: findIconDefinition,
+    findIconDefinition,
     icon,
     text,
     counter,
