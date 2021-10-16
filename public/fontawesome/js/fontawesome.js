@@ -133,7 +133,7 @@
     throw new TypeError("Invalid attempt to destructure non-iterable instance");
   }
 
-  var noop = function noop() {};
+  
 
   try {
     if (typeof window !== 'undefined') {
@@ -1844,7 +1844,7 @@
         mask = nodeMeta.mask,
         maskId = nodeMeta.maskId,
         extra = nodeMeta.extra;
-    return new picked(function (resolve, reject) {
+    return new picked(function (resolve) {
       picked.all([findIcon(iconName, prefix), findIcon(mask.iconName, mask.prefix)]).then(function (_ref) {
         var _ref2 = _slicedToArray(_ref, 2),
             main = _ref2[0],
@@ -2375,7 +2375,7 @@
         _params$classes3 = params.classes,
         classes = _params$classes3 === void 0 ? [] : _params$classes3,
         _params$attributes3 = params.attributes,
-        attributes = _params$attributes3 === void 0 ? {} : _params$attributes3,
+        
         _params$styles3 = params.styles,
         styles = _params$styles3 === void 0 ? {} : _params$styles3;
     return apiObject({
