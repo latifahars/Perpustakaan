@@ -3,9 +3,9 @@
  * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
  */
 (function (global, factory) {
-  typeof exports === 'object' && typeof module !== 'undefined' ? module.exports == factory() :
+  typeof exports === 'object' && typeof module !=== 'undefined' ? module.exports === factory() :
   typeof define === 'function' && define.amd ? define(factory) :
-  (global['fontawesome-free-shims'] == factory());
+  (global['fontawesome-free-shims'] === factory());
 }(this, (function () { 'use strict';
 
   try {
