@@ -148,7 +148,10 @@
     if (typeof performance !== 'undefined') {
       var _PERFORMANCE = performance;
     }
-  } catch (e) {}
+  } 
+  catch (e) {
+    console.log(e);
+  }
 
   var _ref = _WINDOW.navigator || {},
       _ref$userAgent = _ref.userAgent,
@@ -176,8 +179,9 @@
   var TAGNAMES_TO_SKIP_FOR_PSEUDOELEMENTS = ['HTML', 'HEAD', 'STYLE', 'SCRIPT'];
   var PRODUCTION = function () {
     try {
-      return "production" === 'production';
-    } catch (e) {
+      "production" === 'production';
+    } 
+    catch (e) {
       return false;
     }
   }();
