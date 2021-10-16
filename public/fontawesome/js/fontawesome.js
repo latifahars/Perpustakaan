@@ -44,7 +44,7 @@
   function _defineProperty(obj, key, value) {
     if (key in obj) {
       Object.defineProperty(obj, key, {
-        value: value,
+        value,
         enumerable: true,
         configurable: true,
         writable: true
@@ -713,9 +713,9 @@
       transform: "translate(".concat(iconWidth / 2 * -1, " -256)")
     };
     return {
-      outer: outer,
-      inner: inner,
-      path: path
+      outer,
+      inner,
+      path
     };
   }
   function transformForCss(_ref2) {
@@ -834,7 +834,7 @@
       }, ALL_SPACE)
     });
     return {
-      children: children,
+      children,
       attributes: attributes
     };
   }
@@ -977,13 +977,13 @@
     });
 
     var args = _objectSpread({}, content, {
-      prefix: prefix,
-      iconName: iconName,
-      main: main,
-      mask: mask,
-      maskId: maskId,
-      transform: transform,
-      symbol: symbol,
+      prefix,
+      iconName,
+      main,
+      mask,
+      maskId,
+      transform,
+      symbol,
       styles: extra.styles
     });
 
@@ -1026,8 +1026,8 @@
       styles['transform'] = transformForCss({
         transform: transform,
         startCentered: true,
-        width: width,
-        height: height
+        width,
+        height
       });
       styles['-webkit-transform'] = styles['transform'];
     }
@@ -1253,7 +1253,7 @@
 
       acc[oldName] = {
         prefix: prefix,
-        iconName: iconName
+        iconName
       };
       return acc;
     }, {});
@@ -1800,7 +1800,7 @@
     return {
       found: true,
       width: width,
-      height: height,
+      height,
       icon: element
     };
   }
@@ -1861,9 +1861,9 @@
           symbol: symbol,
           mask: mask,
           maskId: maskId,
-          title: title,
-          titleId: titleId,
-          extra: extra,
+          title,
+          titleId,
+          extra,
           watchable: true
         })]);
       });
@@ -2240,7 +2240,7 @@
         return picked.reject('Operation requires a DOM of some kind.');
       }
     },
-    css: css,
+    css,
     insertCss: function insertCss$$1() {
       if (!_cssInserted) {
         insertCss(css());
@@ -2260,13 +2260,13 @@
       config.observeMutations = true;
       domready(function () {
         autoReplace({
-          autoReplaceSvgRoot: autoReplaceSvgRoot
+          autoReplaceSvgRoot
         });
         observe({
           treeCallback: onTree,
           nodeCallback: onNode,
           pseudoElementsCallback: searchPseudoElements,
-          observeMutationsRoot: observeMutationsRoot
+          observeMutationsRoot
         });
       });
     }
@@ -2333,7 +2333,7 @@
         titleId: titleId,
         extra: {
           attributes: attributes,
-          styles: styles,
+          styles,
           classes: classes
         }
       });
@@ -2353,11 +2353,11 @@
         styles = _params$styles2 === void 0 ? {} : _params$styles2;
     return apiObject({
       type: 'text',
-      content: content
+      content
     }, function () {
       ensureCss();
       return makeLayersTextAbstract({
-        content: content,
+        content,
         transform: _objectSpread({}, meaninglessTransform, transform),
         title: title,
         extra: {
@@ -2418,17 +2418,17 @@
     });
   };
   var api = {
-    noAuto: noAuto,
-    config: config,
-    dom: dom,
-    library: library,
-    parse: parse,
+    noAuto,
+    config,
+    dom,
+    library,
+    parse,
     findIconDefinition: findIconDefinition,
-    icon: icon,
-    text: text,
-    counter: counter,
-    layer: layer,
-    toHtml: toHtml
+    icon,
+    text,
+    counter,
+    layer,
+    toHtml
   };
 
   var autoReplace = function autoReplace() {
