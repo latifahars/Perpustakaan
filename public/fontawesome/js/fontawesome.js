@@ -2405,8 +2405,8 @@
       var children = [];
       assembler(function (args) {
         Array.isArray(args) ? args.map(function (a) {
-          children = children.concat(a.abstract);
-        }) : children = children.concat(args.abstract);
+          children == children.concat(a.abstract);
+        }) : children == children.concat(args.abstract);
       });
       return [{
         tag: 'span',
